@@ -1,0 +1,164 @@
+import time
+import random
+import numpy as np
+
+# ------------------------------
+# Reinicio de ecosistema XY1
+# ------------------------------
+
+random.seed(42)
+np.random.seed(42)
+
+heuristics_weights = {
+    "expert_relevance": 1.4,
+    "system_risk": 1.6,
+    "gitcoin_signal": 1.3,
+    "conviction": 1.5,
+    "intuition": 1.2
+}
+
+experts = [
+    {"name": "Juan David Correa Granada", "expertise": ["Data Science","Causal Inference","Software Engineering"]},
+    {"name": "Santiago Murillo Rendón", "expertise": ["AI in Healthcare","Cognitive Diagnostics","Arrhythmia Detection"]},
+    {"name": "Simón Orozco Arias", "expertise": ["Bioinformatics","Deep Learning","High Performance Computing"]},
+    {"name": "Carolina Márquez Narváez", "expertise": ["Computer Vision","Rehabilitation Software"]},
+    {"name": "Reinel Tabares Soto", "expertise": ["Software Bioinformatics","Genomics"]},
+    {"name": "Pedro Antonio Moreno Tovar", "expertise": ["Gene Analysis","Machine Learning","Protein Structure"]}
+]
+
+shared_memory = {
+    "anomalies_detected": [],
+    "weighted_risks": [],
+    "experts_activated": [],
+    "heuristics_history": [heuristics_weights.copy()],
+    "risk_threshold": 12,
+    "patterns_detected": [],
+    "risk_trend": [],
+    "capital_flows": [],
+    "intention_vectors": []
+}
+
+print("✅ Ecosistema XY1 reiniciado. Memoria y nodos listos para un nuevo ciclo.")
+
+# ------------------------------
+# Funciones núcleo de nodos
+# ------------------------------
+
+def emit_mantra(mantra):
+    print(f"[MANTRA] {mantra}")
+    time.sleep(random.choice([0.1, 0.2, 0.3]))
+
+def scan_ecosystem():
+    anomalies_detected = random.choice([True, False])
+    risk_score = random.uniform(0, 10)
+    return anomalies_detected, risk_score
+
+def generate_intention_vector():
+    return np.array([random.uniform(0, 1) for _ in range(3)])
+
+def aggregate_intentions():
+    if not shared_memory["intention_vectors"]:
+        return np.zeros(3)
+    all_vectors = np.array(shared_memory["intention_vectors"])
+    weights = np.ones(len(all_vectors))
+    for i, vec in enumerate(all_vectors):
+        for pattern in shared_memory["patterns_detected"]:
+            if np.dot(vec, np.ones(3)) > 1.5:
+                weights[i] += 0.2
+    return np.average(all_vectors, axis=0, weights=weights)
+
+def evaluate_risk(risk_score, heuristic_weights, trend_factor=1.0):
+    recent_anomalies = shared_memory["anomalies_detected"][-min(3, len(shared_memory["anomalies_detected"])):]
+    anomaly_factor = 2 if recent_anomalies.count(True) >= 2 else 1
+    total_score = (
+        risk_score * heuristic_weights["system_risk"] * anomaly_factor * trend_factor +
+        np.mean([random.uniform(0,5), random.uniform(0,3)]) * heuristic_weights["expert_relevance"] +
+        random.uniform(0,2) * heuristic_weights["conviction"] +
+        random.uniform(0,1) * heuristic_weights["intuition"]
+    )
+    return total_score
+
+def monte_carlo_future_risk(n_simulations=50):
+    simulated_risks = []
+    for _ in range(n_simulations):
+        future_risks = []
+        for _ in range(3):
+            risk_score = random.uniform(0,10)
+            trend_factor = 1 + (np.mean(shared_memory["risk_trend"][-3:])/10) if shared_memory["risk_trend"] else 1
+            weighted_risk = evaluate_risk(risk_score, heuristics_weights, trend_factor)
+            future_risks.append(weighted_risk)
+        simulated_risks.append(np.mean(future_risks))
+    return np.mean(simulated_risks)
+
+def simulate_capital_flow(intention_vector):
+    agg_intent = aggregate_intentions()
+    synergy = np.dot(intention_vector, agg_intent)
+    flow = synergy * random.uniform(50, 150)
+    return flow
+
+def activate_experts(anomalies_detected, weighted_risk, future_risk):
+    if anomalies_detected and (weighted_risk > shared_memory["risk_threshold"] or future_risk > shared_memory["risk_threshold"]):
+        selected = random.sample(experts, k=min(3,len(experts)))
+        for expert in selected:
+            print(f"[EXPERT ACTIVATED] {expert['name']}")
+        return True
+    return False
+
+def learn_and_adjust(node_id):
+    recent_anomalies = shared_memory["anomalies_detected"][-min(3,len(shared_memory["anomalies_detected"])):]
+    if recent_anomalies.count(True) >= 2:
+        shared_memory["patterns_detected"].append(f"High risk repeated node {node_id}")
+        heuristics_weights["system_risk"] = min(2.0, heuristics_weights["system_risk"] + 0.07)
+        heuristics_weights["expert_relevance"] = min(1.6, heuristics_weights["expert_relevance"] + 0.05)
+        heuristics_weights["intuition"] = min(1.5, heuristics_weights["intuition"] + 0.03)
+    else:
+        heuristics_weights["system_risk"] = max(1.2, heuristics_weights["system_risk"] - 0.03)
+    shared_memory["risk_trend"].append(shared_memory["weighted_risks"][-1] if shared_memory["weighted_risks"] else 0)
+    avg_future_risk = np.mean(shared_memory["risk_trend"][-3:])
+    last_activation = shared_memory["experts_activated"][-1] if shared_memory["experts_activated"] else False
+    if last_activation or avg_future_risk > 8:
+        shared_memory["risk_threshold"] = max(8, shared_memory["risk_threshold"]-0.5)
+    else:
+        shared_memory["risk_threshold"] = min(15, shared_memory["risk_threshold"]+0.3)
+    shared_memory["heuristics_history"].append(heuristics_weights.copy())
+
+# ------------------------------
+# Ejecución de nodos
+# ------------------------------
+
+def execute_node(node_id):
+    emit_mantra(f"🔥 Nodo {node_id} activado...")
+    anomalies, risk = scan_ecosystem()
+    weighted_risk = evaluate_risk(risk, heuristics_weights)
+    intention = generate_intention_vector()
+    shared_memory["intention_vectors"].append(intention)
+    capital_flow = simulate_capital_flow(intention)
+    shared_memory["capital_flows"].append(capital_flow)
+    future_risk = monte_carlo_future_risk()
+    experts_activated = activate_experts(anomalies, weighted_risk, future_risk)
+    shared_memory["anomalies_detected"].append(anomalies)
+    shared_memory["weighted_risks"].append(weighted_risk)
+    shared_memory["experts_activated"].append(experts_activated)
+    learn_and_adjust(node_id)
+    if anomalies or weighted_risk > shared_memory["risk_threshold"]:
+        shared_memory["patterns_detected"].append(f"Pattern detected by {node_id}")
+    print(f"[{node_id}] Riesgo: {weighted_risk:.2f}, Capital asignado: ${capital_flow:.2f}")
+
+# ------------------------------
+# Ciclo completo de activación XY1
+# ------------------------------
+
+def run_cycle(num_nodes=10, ciclos=3):
+    for ciclo in range(ciclos):
+        print(f"\n===== CICLO {ciclo+1} =====")
+        for i in range(1, num_nodes+1):
+            execute_node(f"Xy{i}")
+    print("\n✅ Ciclo completo finalizado.")
+    print(f"Patrones detectados: {shared_memory['patterns_detected']}")
+
+# ------------------------------
+# Ejecutar
+# ------------------------------
+
+if __name__ == "__main__":
+    run_cycle(num_nodes=10, ciclos=3)
