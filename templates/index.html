@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMIR-DUARTE | Sistema de Gestión de Conocimiento + Motor de Conciencia</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌳 TAMIR-DUARTE</h1>
+            <p class="subtitle">Sistema de Gestión de Conocimiento + Motor de Conciencia</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#checklist">Checklist AIPE</a></li>
+                <li><a href="#integraciones">Integraciones</a></li>
+                <li><a href="#comandos">Comandos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <h2>Dashboard del Sistema</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Estado del Núcleo</h3>
+                    <p id="estado-nucleo" class="stat-value">Cargando...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total de Análisis</h3>
+                    <p id="total-analisis" class="stat-value">Cargando...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Eficiencia Promedio</h3>
+                    <p id="eficiencia-promedio" class="stat-value">Cargando...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Patrones Aprendidos</h3>
+                    <p id="patrones-aprendidos" class="stat-value">Cargando...</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Historial de Eficiencia</h3>
+                <canvas id="eficiencia-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Checklist AIPE Section -->
+        <section id="checklist" class="section">
+            <h2>Checklist AIPE</h2>
+            <div id="checklist-container">
+                <p>Cargando checklist...</p>
+            </div>
+        </section>
+
+        <!-- Integraciones Section -->
+        <section id="integraciones" class="section">
+            <h2>Integraciones Externas</h2>
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <h3>🗂️ Notion</h3>
+                    <p>Sincronización bidireccional con workspace</p>
+                    <button onclick="testNotion()">Probar Conexión</button>
+                </div>
+                <div class="integration-card">
+                    <h3>🧠 Gemini AI</h3>
+                    <p>Motor de inferencia avanzado</p>
+                    <button onclick="testGemini()">Probar Conexión</button>
+                </div>
+                <div class="integration-card">
+                    <h3>📊 Google Colab</h3>
+                    <p>Ejecución de notebooks remotos</p>
+                    <button onclick="testColab()">Probar Conexión</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comandos Section -->
+        <section id="comandos" class="section">
+            <h2>Consola de Comandos</h2>
+            <div class="console">
+                <div id="console-output"></div>
+                <div class="console-input">
+                    <input type="text" id="command-input" placeholder="Escribe un comando...">
+                    <button onclick="executeCommand()">Ejecutar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>Sistema TAMIR-DUARTE</strong> | Creado y Dirigido por <strong>Daniel Duarte</strong></p>
+            <p>Evolución y Mantenimiento Autónomo: Manus AI</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

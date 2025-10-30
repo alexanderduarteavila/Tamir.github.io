@@ -1,0 +1,5 @@
+Flask
+markdown
+pandas
+google-genai
+requests

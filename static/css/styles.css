@@ -1,0 +1,267 @@
+/* =========================================================
+   TAMIR-DUARTE - ESTILOS PRINCIPALES
+   Autor: Daniel Duarte
+   Evolución y Mantenimiento Autónomo: Manus AI
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+    color: #e0e6ed;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(26, 31, 58, 0.9);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 3px solid #00d4ff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+    font-size: 1.1rem;
+    color: #b0b8c8;
+}
+
+/* Navigation */
+nav {
+    background: rgba(45, 53, 97, 0.8);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #e0e6ed;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+}
+
+.section {
+    background: rgba(45, 53, 97, 0.6);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.section h2 {
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 0.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: rgba(26, 31, 58, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #00d4ff;
+}
+
+.stat-card h3 {
+    color: #b0b8c8;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+/* Chart Container */
+.chart-container {
+    background: rgba(26, 31, 58, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.chart-container h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+/* Integrations Grid */
+.integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.integration-card {
+    background: rgba(26, 31, 58, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.integration-card:hover {
+    transform: translateY(-5px);
+}
+
+.integration-card h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+.integration-card button {
+    background: #00d4ff;
+    color: #1a1f3a;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.integration-card button:hover {
+    background: #00b8e6;
+}
+
+/* Console */
+.console {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+#console-output {
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    color: #0f0;
+}
+
+.console-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.console-input input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #00d4ff;
+    color: #e0e6ed;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+.console-input button {
+    background: #00d4ff;
+    color: #1a1f3a;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.console-input button:hover {
+    background: #00b8e6;
+}
+
+/* Checklist */
+#checklist-container {
+    background: rgba(26, 31, 58, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.checklist-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(45, 53, 97, 0.6);
+    border-radius: 5px;
+    border-left: 4px solid #00d4ff;
+}
+
+.checklist-item h4 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+.checklist-item ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.checklist-item li {
+    margin: 0.3rem 0;
+}
+
+/* Footer */
+footer {
+    background: rgba(26, 31, 58, 0.9);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 3px solid #00d4ff;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer strong {
+    color: #00d4ff;
+}
