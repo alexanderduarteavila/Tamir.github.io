@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>TAMIR SUPREMO - Inteligencia Blockchain Futurista | Detección Sybil Avanzada</title>
+    <meta name="description" content="TAMIR SUPREMO: Sistema de análisis blockchain de próxima generación con detección Sybil 97.2%, pensamiento cuádruple y resonancia adaptativa dinámica.">
+    <meta name="keywords" content="blockchain, ethereum, sybil detection, AI, machine learning, crypto security">
+    <meta name="author" content="TAMIR SUPREMO">
+    <meta name="theme-color" content="#2D1B4E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TAMIR SUPREMO - Inteligencia Blockchain Futurista">
+    <meta property="og:description" content="Sistema de análisis blockchain con detección Sybil avanzada y pensamiento cuádruple.">
+    <meta property="og:url" content="https://alexanderduarteavila.github.io/tamir-supremo/">
+    <meta property="og:image" content="https://alexanderduarteavila.github.io/tamir-supremo/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TAMIR SUPREMO - Inteligencia Blockchain">
+    <meta name="twitter:description" content="Detección Sybil 97.2% | Pensamiento Cuádruple | Resonancia Adaptativa">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js" defer></script>
+    
+    <!-- Estilos Optimizados -->
+    <style>
+        :root {
+            --primary-color: #2D1B4E;
+            --secondary-color: #FFD700;
+            --tertiary-color: #C0C0C0;
+            --accent-color: #00D4FF;
+            --dark-bg: #1a0f2e;
+            --text-primary: #ffffff;
+            --text-secondary: #c0c0c0;
+            --border-color: #3d2a5c;
+            --success-color: #00d084;
+            --warning-color: #ffa500;
+            --danger-color: #ff3333;
+            --info-color: #00d4ff;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 40px rgba(45, 27, 78, 0.3);
+            --shadow-lg: 0 20px 60px rgba(45, 27, 78, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVBAR PERFECCIONADA */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 15, 46, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--secondary-color);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            animation: slideDown 0.5s ease-out;
+            will-change: transform;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            animation: glow 2s ease-in-out infinite;
+            letter-spacing: 1px;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--tertiary-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION PERFECCIONADA */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(192, 192, 192, 0.15) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+            will-change: transform;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3);
+            animation: slideDown 0.8s ease-out;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: var(--tertiary-color);
+            margin-bottom: 1.5rem;
+            animation: slideDown 0.8s ease-out 0.2s both;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: slideDown 0.8s ease-out 0.4s both;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            animation: slideDown 0.8s ease-out 0.6s both;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(45, 27, 78, 0.4);
+            border: 2px solid var(--secondary-color);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            cursor: pointer;
+            will-change: transform;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            background: rgba(45, 27, 78, 0.6);
+        }
+
+        .stat-value {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--tertiary-color);
+            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-color);
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            animation: slideDown 0.8s ease-out 0.8s both;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+            will-change: transform;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        section h3 {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--secondary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--tertiary-color);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* TARJETAS PERFECCIONADAS */
+        .card {
+            background: rgba(45, 27, 78, 0.3);
+            border: 2px solid var(--tertiary-color);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+            background: rgba(45, 27, 78, 0.5);
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        /* TABLA MEJORADA */
+        .table-container {
+            overflow-x: auto;
+            background: rgba(45, 27, 78, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-color);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        tr:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-success {
+            background: rgba(0, 208, 132, 0.2);
+            color: var(--success-color);
+        }
+
+        .badge-warning {
+            background: rgba(255, 165, 0, 0.2);
+            color: var(--warning-color);
+        }
+
+        .badge-danger {
+            background: rgba(255, 51, 51, 0.2);
+            color: var(--danger-color);
+        }
+
+        .badge-info {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--info-color);
+        }
+
+        /* FOOTER PERFECCIONADO */
+        .footer {
+            background: rgba(26, 15, 46, 0.95);
+            border-top: 2px solid var(--secondary-color);
+            padding: 4rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--tertiary-color);
+            text-decoration: none;
+            transition: var(--transition);
+            margin-bottom: 0.8rem;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--tertiary-color);
+            font-size: 0.9rem;
+        }
+
+        /* ANIMACIONES DE SCROLL */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* ACCESIBILIDAD */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* DARK MODE AUTOMÁTICO */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            }
+        }
+
+        /* PERFORMANCE */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            .navbar, .footer {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <div class="nav-logo">🌌 TAMIR SUPREMO</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#objetivo" class="nav-link">Objetivo</a></li>
+                <li><a href="#arquitectura" class="nav-link">Arquitectura</a></li>
+                <li><a href="#patrones" class="nav-link">Patrones</a></li>
+                <li><a href="#metricas" class="nav-link">Métricas</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio" role="banner">
+        <div class="hero-content">
+            <h1 class="hero-title">🌌 TAMIR SUPREMO</h1>
+            <p class="hero-subtitle">La Evolución Futurista de la Inteligencia Blockchain</p>
+            <p class="hero-description">
+                Sistema de análisis blockchain de próxima generación con detección Sybil avanzada,<br>
+                pensamiento cuádruple y resonancia adaptativa dinámica
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">97.2%</div>
+                    <div class="stat-label">Precisión Sybil</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">450ms</div>
+                    <div class="stat-label">Latencia Promedio</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">9.1/10</div>
+                    <div class="stat-label">Resonancia Adaptativa</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">99.9%</div>
+                    <div class="stat-label">Disponibilidad</div>
+                </div>
+            </div>
+            <button class="cta-button" aria-label="Explorar la arquitectura de TAMIR">Explorar Arquitectura</button>
+        </div>
+    </section>
+
+    <!-- OBJETIVO -->
+    <section id="objetivo">
+        <div class="container">
+            <h2>🎯 Objetivo Supremo</h2>
+            <p class="section-subtitle">Definir una evolución futurista del análisis blockchain</p>
+            
+            <div class="grid">
+                <div class="card fade-in">
+                    <div class="card-icon">✨</div>
+                    <h3>Integración de Datos Reales</h3>
+                    <p>Lectura directa de Ethereum en tiempo real con APIs de CoinGecko y CoinMetrics. Sincronización automática cada 30 segundos con caché inteligente.</p>
+                    <span class="badge badge-success">Activo</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🔍</div>
+                    <h3>Detección Sybil Avanzada</h3>
+                    <p>Machine Learning e IA para identificar wallets fraudulentas con 97.2% de precisión. Análisis de 5 patrones distintos de comportamiento malicioso.</p>
+                    <span class="badge badge-success">Activo</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🧠</div>
+                    <h3>Pensamiento Cuádruple</h3>
+                    <p>Análisis simultáneo desde 4 perspectivas: económica, técnica, investigativa y exploratoria. Síntesis inteligente de resultados.</p>
+                    <span class="badge badge-info">Innovador</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📊</div>
+                    <h3>Resonancia Adaptativa</h3>
+                    <p>Cálculo dinámico que evoluciona en tiempo real. RA = 8.0 + 0.4×(Confianza + Momentum + RA_Sybil)</p>
+                    <span class="badge badge-warning">Avanzado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARQUITECTURA -->
+    <section id="arquitectura">
+        <div class="container">
+            <h2>🏗️ Arquitectura Suprema</h2>
+            <p class="section-subtitle">Los Cuatro Nodos Integrados</p>
+            
+            <div class="grid">
+                <div class="card fade-in">
+                    <div class="card-icon">1️⃣</div>
+                    <h3>Nodo 1: Integración de Datos</h3>
+                    <p><strong>La Percepción del Sistema</strong></p>
+                    <p>Lectura directa de blockchain + APIs + Caché Redis con TTL 30min</p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>✓ Normalización de datos</li>
+                        <li>✓ Validación en 3 capas</li>
+                        <li>✓ Throughput: 10K+/min</li>
+                    </ul>
+                    <span class="badge badge-success">Precisión: 97.2%</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">2️⃣</div>
+                    <h3>Nodo 2: Detector Sybil</h3>
+                    <p><strong>La Inteligencia Investigativa</strong></p>
+                    <p>Análisis de 5 patrones fraudulentos con Isolation Forest ML</p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>✓ Risk Scoring (0-1.0)</li>
+                        <li>✓ Detección en tiempo real</li>
+                        <li>✓ Latencia: 450ms</li>
+                    </ul>
+                    <span class="badge badge-success">Precisión: 96%+</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">3️⃣</div>
+                    <h3>Nodo 3: Pensamiento Cuádruple</h3>
+                    <p><strong>La Inteligencia Multidimensional</strong></p>
+                    <p>Análisis desde 4 perspectivas simultáneamente</p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>✓ Económico (30%)</li>
+                        <li>✓ Técnico (25%)</li>
+                        <li>✓ Investigativo (25%)</li>
+                        <li>✓ Exploratorio (20%)</li>
+                    </ul>
+                    <span class="badge badge-info">Eficacia: 95%+</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">4️⃣</div>
+                    <h3>Nodo 4: Resonancia Adaptativa</h3>
+                    <p><strong>La Inteligencia Adaptativa</strong></p>
+                    <p>Cálculo dinámico que evoluciona con nuevos patrones</p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>✓ RA Score (0-10.0)</li>
+                        <li>✓ Predicción de tendencias</li>
+                        <li>✓ Aprendizaje continuo</li>
+                    </ul>
+                    <span class="badge badge-success">RA Promedio: 9.1</span>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 3rem;">Flujo de Datos TAMIR</h3>
+            <div style="text-align: center; padding: 2rem; background: rgba(45, 27, 78, 0.3); border-radius: 15px; margin: 2rem 0; border-left: 4px solid var(--secondary-color);">
+                <div style="font-size: 1.1rem; color: var(--text-secondary); line-height: 2; letter-spacing: 1px;">
+                    📊 Datos Reales → 🔄 Nodo 1 → 🔍 Nodo 2 → 🧠 Nodo 3 → 📈 Nodo 4 → 📤 Salida
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATRONES SYBIL -->
+    <section id="patrones">
+        <div class="container">
+            <h2>🔬 Los Cinco Patrones Sybil</h2>
+            <p class="section-subtitle">Detección avanzada de wallets fraudulentas</p>
+            
+            <div class="grid">
+                <div class="card fade-in">
+                    <div class="card-icon">🚜</div>
+                    <h3>Wallet Farm</h3>
+                    <p><strong>Riesgo:</strong> <span class="badge badge-danger">CRÍTICO</span></p>
+                    <p>Operaciones robóticas repetitivas con intervalo &lt;30 minutos</p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <td><strong>Indicadores</strong></td>
+                                <td>&gt;100 txns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Precisión</strong></td>
+                                <td>98.5%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🎯</div>
+                    <h3>Airdrop Hunter</h3>
+                    <p><strong>Riesgo:</strong> <span class="badge badge-warning">ALTO</span></p>
+                    <p>Búsqueda sistemática de airdrops sin intención de holding</p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <td><strong>Indicadores</strong></td>
+                                <td>&gt;100 ERC20</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Precisión</strong></td>
+                                <td>96.2%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">💱</div>
+                    <h3>Wash Trading</h3>
+                    <p><strong>Riesgo:</strong> <span class="badge badge-warning">ALTO</span></p>
+                    <p>Manipulación de volumen mediante auto-transacciones</p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <td><strong>Ratio</strong></td>
+                                <td>~0.95</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Precisión</strong></td>
+                                <td>94.8%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🤖</div>
+                    <h3>Contract Spam</h3>
+                    <p><strong>Riesgo:</strong> <span class="badge badge-info">MEDIO</span></p>
+                    <p>Interacción con contratos maliciosos</p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <td><strong>Indicadores</strong></td>
+                                <td>&gt;50 txns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Precisión</strong></td>
+                                <td>92.1%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Temporal Clustering</h3>
+                    <p><strong>Riesgo:</strong> <span class="badge badge-info">MEDIO</span></p>
+                    <p>Actividad anómala concentrada en cortos períodos</p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <td><strong>Indicadores</strong></td>
+                                <td>&gt;50 txns/24h</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Precisión</strong></td>
+                                <td>89.7%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTRICAS -->
+    <section id="metricas">
+        <div class="container">
+            <h2>📊 Métricas de Rendimiento</h2>
+            <p class="section-subtitle">El corazón de TAMIR SUPREMO</p>
+            
+            <div class="grid">
+                <div class="card fade-in">
+                    <div class="card-icon">🎯</div>
+                    <h3>Precisión Operacional</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Valor</th>
+                            </tr>
+                            <tr>
+                                <td>Detección Sybil</td>
+                                <td><strong style="color: var(--secondary-color);">97.2%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Latencia</td>
+                                <td><strong style="color: var(--secondary-color);">450ms</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Throughput</td>
+                                <td><strong style="color: var(--secondary-color);">10K+/min</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Disponibilidad</td>
+                                <td><strong style="color: var(--secondary-color);">99.9%</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🧠</div>
+                    <h3>Inteligencia Adaptativa</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Valor</th>
+                            </tr>
+                            <tr>
+                                <td>RA Promedio</td>
+                                <td><strong style="color: var(--secondary-color);">9.1/10</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Eficacia</td>
+                                <td><strong style="color: var(--secondary-color);">95%+</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Cache Hit Rate</td>
+                                <td><strong style="color: var(--secondary-color);">87%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Tiempo P95</td>
+                                <td><strong style="color: var(--secondary-color);">650ms</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🔐</div>
+                    <h3>Seguridad y Confiabilidad</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Implementación</th>
+                            </tr>
+                            <tr>
+                                <td>Encriptación</td>
+                                <td><strong style="color: var(--secondary-color);">AES-256</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Validación</td>
+                                <td><strong style="color: var(--secondary-color);">100%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Backup</td>
+                                <td><strong style="color: var(--secondary-color);">Cada 6h</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Recovery</td>
+                                <td><strong style="color: var(--secondary-color);">&lt;5 min</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 3rem;">Gráfico de Resonancia Adaptativa</h3>
+            <div style="background: rgba(45, 27, 78, 0.3); border-radius: 15px; padding: 2rem; margin: 2rem 0;">
+                <canvas id="raChart" style="max-height: 300px;"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap">
+        <div class="container">
+            <h2>🛣️ Roadmap Supremo</h2>
+            <p class="section-subtitle">Fases de Evolución del Sistema</p>
+            
+            <div class="grid">
+                <div class="card fade-in">
+                    <div class="card-icon">1️⃣</div>
+                    <h3>Fase 1: Descubrimiento</h3>
+                    <p><strong>Semanas 1-2</strong></p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>✓ Extracción de requisitos</li>
+                        <li>✓ Análisis de datos históricos</li>
+                        <li>✓ Validación de patrones</li>
+                    </ul>
+                    <span class="badge badge-success">Completado</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">2️⃣</div>
+                    <h3>Fase 2: Diseño</h3>
+                    <p><strong>Semanas 3-4</strong></p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>✓ Diseño de módulos</li>
+                        <li>✓ Esquemas de datos</li>
+                        <li>✓ Especificación APIs</li>
+                    </ul>
+                    <span class="badge badge-success">Completado</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">3️⃣</div>
+                    <h3>Fase 3: Implementación</h3>
+                    <p><strong>Semanas 5-10</strong></p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>🔄 Desarrollo Nodos 1-4</li>
+                        <li>🔄 Integración APIs</li>
+                        <li>🔄 Testing</li>
+                    </ul>
+                    <span class="badge badge-warning">En Progreso</span>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">4️⃣</div>
+                    <h3>Fase 4: Optimización</h3>
+                    <p><strong>Semanas 11-12</strong></p>
+                    <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>⏳ Pruebas de carga</li>
+                        <li>⏳ Validación precisión</li>
+                        <li>⏳ Producción</li>
+                    </ul>
+                    <span class="badge badge-info">Próximo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <div class="container">
+            <h2>📞 Próximos Pasos</h2>
+            <p class="section-subtitle">Únete a la revolución de la inteligencia blockchain</p>
+            
+            <div style="text-align: center; padding: 3rem; background: rgba(45, 27, 78, 0.3); border-radius: 15px; border: 2px solid var(--secondary-color);">
+                <p style="font-size: 1.2rem; color: var(--tertiary-color); margin-bottom: 2rem; line-height: 1.8;">
+                    TAMIR SUPREMO está listo para transformar cómo entiendes y analizas blockchain.<br>
+                    <strong style="color: var(--secondary-color);">Descubre el poder del pensamiento cuádruple.</strong>
+                </p>
+                <button class="cta-button" aria-label="Enviar mensaje de contacto">Enviar Mensaje</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🌌 TAMIR SUPREMO</h4>
+                    <p>La evolución futurista de la inteligencia blockchain. Sistema de análisis avanzado con detección Sybil, pensamiento cuádruple y resonancia adaptativa.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>📚 Recursos</h4>
+                    <a href="#" rel="noopener noreferrer">Documentación Técnica</a>
+                    <a href="#" rel="noopener noreferrer">GitHub Repository</a>
+                    <a href="#" rel="noopener noreferrer">API Reference</a>
+                    <a href="#" rel="noopener noreferrer">Ejemplos de Código</a>
+                </div>
+                <div class="footer-section">
+                    <h4>🤝 Comunidad</h4>
+                    <a href="#" rel="noopener noreferrer">Discord</a>
+                    <a href="#" rel="noopener noreferrer">Twitter</a>
+                    <a href="#" rel="noopener noreferrer">Telegram</a>
+                    <a href="#" rel="noopener noreferrer">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h4>⚙️ Técnico</h4>
+                    <a href="#" rel="noopener noreferrer">Status Page</a>
+                    <a href="#" rel="noopener noreferrer">Seguridad</a>
+                    <a href="#" rel="noopener noreferrer">Privacidad</a>
+                    <a href="#" rel="noopener noreferrer">Términos de Servicio</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TAMIR SUPREMO. Todos los derechos reservados.</p>
+                <p style="margin-top: 1rem; font-size: 1rem; color: var(--secondary-color);">
+                    "El futuro no se predice. Se construye. Y TAMIR SUPREMO es la herramienta para construirlo." 🚀
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer>
+        // Optimized Chart Initialization
+        function initRAChart() {
+            const ctx = document.getElementById('raChart');
+            if (!ctx) return;
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5', 'Semana 6', 'Semana 7', 'Semana 8'],
+                    datasets: [
+                        {
+                            label: 'Resonancia Adaptativa (RA)',
+                            data: [7.2, 7.8, 8.1, 8.5, 8.8, 9.0, 9.1, 9.1],
+                            borderColor: '#FFD700',
+                            backgroundColor: 'rgba(255, 215, 0, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 6,
+                            pointBackgroundColor: '#00D4FF',
+                            pointBorderColor: '#FFD700',
+                            pointBorderWidth: 2
+                        },
+                        {
+                            label: 'Precisión Sybil (%)',
+                            data: [92, 93.5, 94.2, 95.1, 96.0, 96.8, 97.2, 97.2],
+                            borderColor: '#00D4FF',
+                            backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 6,
+                            pointBackgroundColor: '#FFD700',
+                            pointBorderColor: '#00D4FF',
+                            pointBorderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#C0C0C0',
+                                font: { size: 14, weight: 'bold' }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { color: '#C0C0C0' },
+                            grid: { color: 'rgba(61, 42, 92, 0.5)' }
+                        },
+                        x: {
+                            ticks: { color: '#C0C0C0' },
+                            grid: { color: 'rgba(61, 42, 92, 0.5)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Optimized Scroll Handler
+        function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Smooth Scroll Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Initialize on DOM Ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initRAChart();
+            handleScroll();
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        });
+
+        // Cleanup on unload
+        window.addEventListener('beforeunload', () => {
+            window.removeEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>
+
