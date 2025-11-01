@@ -8,6 +8,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadSystemStatus();
     loadChecklist();
+    loadPatrones();
     initChart();
 });
 
@@ -190,3 +191,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Cargar patrones aprendidos
+async function loadPatrones() {
+    try {
+        const response = await fetch('/api/status');
+        const data = await response.json();
+        
+        const container = document.getElementById('patrones-container');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        
+        // Patrones de ejemplo del sistema TAMIR
+        const patrones = [
+            { nombre: 'Optimizacion ROI', eficacia: 0.95, tipo: 'Economico' },
+            { nombre: 'Defensa Reentrancy', eficacia: 0.98, tipo: 'Tecnico' },
+            { nombre: 'Analisis de Riesgo', eficacia: 0.87, tipo: 'Detective' },
+            { nombre: 'Innovacion Disruptiva', eficacia: 0.82, tipo: 'Curioso' },
+            { nombre: 'Arquitectura Escalable', eficacia: 0.91, tipo: 'Tecnico' },
+            { nombre: 'Deteccion de Anomalias', eficacia: 0.89, tipo: 'Detective' }
+        ];
+        
+        patrones.forEach(patron => {
+            const item = document.createElement('div');
+            item.className = 'patron-item';
+            item.innerHTML = `
+                <strong>${patron.nombre}</strong>
+                <small>${patron.tipo}</small>
+                <small>Eficacia: ${(patron.eficacia * 100).toFixed(0)}%</small>
+            `;
+            container.appendChild(item);
+        });
+    } catch (error) {
+        console.error('Error al cargar patrones:', error);
+    }
+}
