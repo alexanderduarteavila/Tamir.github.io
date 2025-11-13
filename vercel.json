@@ -1,0 +1,1 @@
+{\n  "version": 2,\n  "builds": [\n    {\n      "src": "index.html",\n      "use": "@vercel/static-build"\n    }\n  ],\n  "routes": [\n    {\n      "src": "/(.*)",\n      "dest": "/index.html"\n    }\n  ]\n}
