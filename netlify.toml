@@ -1,0 +1,14 @@
+[build]
+  command = "echo 'Despliegue de TAMIR-DUARTE en Netlify'"
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "echo 'Producción: TAMIR-DUARTE'"
+
+[context.deploy-preview]
+  command = "echo 'Preview: TAMIR-DUARTE'"
