@@ -1,0 +1,9 @@
+services:
+  - type: static
+    name: tamir-duarte
+    env: static
+    buildCommand: echo "Building TAMIR-DUARTE for Render"
+    staticPublishPath: .
+    routes:
+      - path: /*
+        destination: /index.html
