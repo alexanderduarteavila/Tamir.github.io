@@ -384,3 +384,23 @@ footer strong {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+
+/* Sponsor Button */
+.sponsor-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff8c00, #ffc800);
+    color: #1a1f3a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+}
+
+.sponsor-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+}
